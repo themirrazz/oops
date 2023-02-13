@@ -1,0 +1,76 @@
+.box-content {
+    background: #0e0975 !important;
+}
+
+html,#view,.box-header {
+    background: black !important;
+}
+
+.box-header * { color: #57b1db !important; }
+
+.box {
+    border: 1px solid #57b1db !important;
+    box-shadow: 10px 5px 5px #57b1db;
+    height: fit-content;
+}
+
+.box-header h4 {
+    animation: glitch 1s linear infinite;
+}
+
+@keyframes glitch{
+  2%,64%{
+    transform: translate(2px,0) skew(0deg);
+  }
+  4%,60%{
+    transform: translate(-2px,0) skew(0deg);
+  }
+  62%{
+    transform: translate(0,0) skew(5deg); 
+  }
+}
+
+.box-header h4:before,
+.box-header h4:after{
+  content: "Whats Happening";
+  position: absolute;
+  left: 0;
+}
+
+.box-header h4:before{
+  animation: glitchTop 1s linear infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+}
+
+.news h4:before,.news h4:after{content:"Scratch News"}
+
+@keyframes glitchTop{
+  2%,64%{
+    transform: translate(2px,-2px);
+  }
+  4%,60%{
+    transform: translate(-2px,2px);
+  }
+  62%{
+    transform: translate(13px,-1px) skew(-13deg); 
+  }
+}
+
+.box-header:after{
+  animation: glitchBotom 1.5s linear infinite;
+  clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+}
+
+@keyframes glitchBotom{
+  2%,64%{
+    transform: translate(-2px,0);
+  }
+  4%,60%{
+    transform: translate(-2px,0);
+  }
+  62%{
+    transform: translate(-22px,5px) skew(21deg); 
+  }
+}
